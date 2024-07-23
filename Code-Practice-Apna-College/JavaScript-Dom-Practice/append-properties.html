@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Append Examples</title>
+  </head>
+  <body>
+    <div id="parent">
+      <h2>Parent Element</h2>
+      <div id="reference">Reference Element</div>
+    </div>
+
+    <script>
+      // Using appendChild()
+      var parent1 = document.getElementById("parent");
+      var child1 = document.createElement("div");
+      child1.textContent = "Appended with appendChild()";
+      parent1.appendChild(child1);
+
+      // Using insertBefore()
+      var parent2 = document.getElementById("parent");
+      var child2 = document.createElement("div");
+      child2.textContent = "Inserted before Reference Element";
+      var referenceNode = document.getElementById("reference");
+      parent2.insertBefore(child2, referenceNode);
+
+      // Using innerHTML
+      var parent3 = document.getElementById("parent");
+      parent3.innerHTML += "<div>Inserted with innerHTML</div>";
+
+      // Using insertAdjacentHTML()
+      var parent4 = document.getElementById("parent");
+      parent4.insertAdjacentHTML(
+        "beforeend",
+        "<div>Inserted with insertAdjacentHTML()</div>"
+      );
+
+      // Using insertAdjacentElement()
+      var parent5 = document.getElementById("parent");
+      var newElement = document.createElement("div");
+      newElement.textContent = "Inserted with insertAdjacentElement()";
+      parent5.insertAdjacentElement("beforeend", newElement);
+
+      // Using insertAdjacentText()
+      var parent6 = document.getElementById("parent");
+      parent6.insertAdjacentText(
+        "beforeend",
+        "Inserted with insertAdjacentText()"
+      );
+    </script>
+  </body>
+</html>

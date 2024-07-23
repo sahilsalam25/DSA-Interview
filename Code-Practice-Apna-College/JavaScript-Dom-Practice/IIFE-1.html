@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIFE with HTML</title>
+  </head>
+  <body>
+    <h2>
+      IIFE stands for Immediately Invoked Function Expression. It is a
+      JavaScript design pattern that allows a function to execute immediately
+      after it’s defined. This pattern is commonly used to create a local scope
+      for variables, preventing them from polluting the global scope.
+      <br />
+
+      Here's a simple example of an IIFE:
+    </h2>
+    <h4>
+      (function() { <br />
+      // code here <br />
+      }) ();
+    </h4>
+    <p>
+      Here's a breakdown of what's happening:<br />
+
+      (function() { ... }): Defines an anonymous function enclosed in
+      parentheses. This creates a function expression.<br />
+      (): Immediately invokes the function expression.<br />
+      IIFE is commonly used to encapsulate code, create private variables, or to
+      avoid naming conflicts.<br />
+    </p>
+    <div id="counter"></div>
+
+    <script>
+      (function () {
+        // Private variable
+        var count = 0;
+
+        // Public function to increment count
+        function increment() {
+          count++;
+        }
+
+        // Public function to get the current count
+        function getCount() {
+          return count;
+        }
+
+        // Public function to reset count
+        function reset() {
+          count = 0;
+        }
+
+        // Example usage
+        increment();
+        increment();
+        reset();
+
+        // Display the count
+        document.getElementById("counter").innerText = "Count: " + getCount();
+      })();
+    </script>
+
+    <!-- <div id="output"></div>
+
+    <script>
+      (function () {
+        // Your JavaScript code here
+        var message = "Hello from inside the IIFE!";
+        document.getElementById("output").innerText = message;
+      })();
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>api request</title>
+  </head>
+  <body>
+    <h2>Get New Cat Facts...</h2>
+    <button>Click to Show !</button>
+    <h4></h4>
+
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/esm/axios.js -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      let btn = document.querySelector("button");
+      let h4 = document.querySelector("h4");
+      btn.addEventListener("click", async function () {
+        let factResult = await printCatfact();
+        console.log("New facts is...", factResult);
+        h4.innerText = factResult;
+      });
+      // using axios
+      // using error handling try & catch...
+      let url = "https://catfact.ninja/fact";
+      async function printCatfact() {
+        try {
+          let response = await axios.get(url);
+          //   let data1 = await response.json();
+          //   console.log("response1 is =\n", response);
+          //   console.log("data is =\n", response.data);
+          let result = response.data.fact;
+          //   console.log("fact is =\n", result);
+          return result;
+        } catch (error) {
+          console.log("error...", error);
+          return "Sorry... No Result found !";
+        }
+      }
+      //   printCatfact();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+let array = [1, 2, 3, 6, 4, 5]; // 15
+// M1--- Using Loop
+function findMaxUsingLoop(array) {
+    let max = 0;
+    for (let index = 0; index < array.length; index++) {
+        if (array[index] > max) {
+            max = array[index];
+        }
+
+    }
+    return max;
+
+}
+console.log('Max Using Loop =', findMaxUsingLoop(array));
+// M2--- Using reduce:
+let Result = array.reduce((accumulator, current) => {
+    if (accumulator < current) {
+        accumulator = current;
+    }
+    return accumulator;
+}, 0);
+console.log('Max Using reduce =', Result);
+// Here current=array[index];
+// Here accumulator=sum;

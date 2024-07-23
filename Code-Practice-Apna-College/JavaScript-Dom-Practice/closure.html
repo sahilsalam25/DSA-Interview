@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Closure Example</title>
+  </head>
+  <body>
+    <h2>
+      JavaScript closure is a feature that allows inner functions to access the
+      outer scope of a function. Closure helps in binding a function to its
+      outer boundary and is created automatically whenever a function is
+      created. A block is also treated as a scope since ES6. Since JavaScript is
+      event-driven so closures are useful as it helps to maintain the state
+      between events.
+    </h2>
+    <h3>
+      Lexical Scoping:<br />
+      A function scope’s ability to access variables from the parent scope is
+      known as lexical scope. We refer to the parent function’s lexical binding
+      of the child function as “lexically binding.”
+    </h3>
+    <h4>Another Words...</h4>
+    <p>
+      A closure in JavaScript is when a function is able to remember and access
+      its lexical scope even when that function is executing outside its
+      original lexical scope. In simpler terms, a closure gives you access to an
+      outer function's scope from an inner function even after the outer
+      function has finished executing.
+    </p>
+    <h2>Closure Example</h2>
+    <script>
+      function outerFunction() {
+        let outerVariable = "I am from the outer function";
+
+        function innerFunction() {
+          console.log(outerVariable);
+        }
+
+        return innerFunction;
+      }
+
+      const innerFunc = outerFunction();
+      innerFunc(); // Output: "I am from the outer function"
+    </script>
+    <h3>
+      Closures are often used to create private variables and functions, to
+      encapsulate logic within a function and prevent it from being accessed or
+      modified from outside. They're also commonly used in event handlers,
+      callbacks, and asynchronous code to maintain access to the surrounding
+      state. Understanding closures is crucial for writing efficient and
+      maintainable JavaScript code.
+    </h3>
+    <h2>Simple Closure Example</h2>
+
+    <p id="output"></p>
+
+    <script>
+      function createCounter() {
+        let count = 0;
+
+        // Inner function increment has access to the count variable
+        function increment() {
+          return ++count;
+        }
+
+        // Return the inner function, which forms a closure over the count variable
+        return increment;
+      }
+
+      // Create a counter using the createCounter function
+      const counter = createCounter();
+
+      // Call the counter function multiple times
+      document.getElementById("output").textContent = counter(); // Output: 1
+      document.getElementById("output").textContent += ", " + counter(); // Output: 2
+      document.getElementById("output").textContent += ", " + counter(); // Output: 3
+    </script>
+  </body>
+</html>

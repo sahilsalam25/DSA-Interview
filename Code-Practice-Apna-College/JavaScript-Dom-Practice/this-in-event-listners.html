@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this-in-el</title>
+  </head>
+  <body>
+    <h1>this is h1</h1>
+    <p>this is para...</p>
+    <h3>this is another h3</h3>
+    <button>Click...</button>
+    <script>
+      let h1 = document.querySelector("h1");
+      let h3 = document.querySelector("h3");
+      let p = document.querySelector("p");
+      let btn = document.querySelector("button");
+      function changeColor() {
+        console.log(this.innerText);
+        this.style.backgroundColor = "green";
+      }
+      btn.addEventListener("click", changeColor);
+      h1.addEventListener("click", changeColor);
+      h3.addEventListener("onmouseover", changeColor);
+      p.addEventListener("dblclick", changeColor);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoisting Examples</title>
+  </head>
+  <body>
+    <h2 style="color: rgb(39, 226, 163)">
+      Hoisting in JavaScript is a mechanism where variable and function
+      declarations are moved to the top of their containing scope during the
+      compile phase, before the code is executed. This means that regardless of
+      where variables and functions are declared within their scope, they are
+      treated as if they are declared at the top.
+    </h2>
+    <h3>
+      However, it's important to note that only the declarations themselves are
+      hoisted, not the initializations or assignments. Let's see how hoisting
+      works with variables and functions:
+    </h3>
+    <h4 style="color: red">
+      However, it's important to note that function expressions are not hoisted
+      like function declarations. Only the variable declaration is hoisted, not
+      the assignment of the function expression to the variable. So, with
+      function expressions, you'll still encounter a reference error if you try
+      to call them before they're defined.
+    </h4>
+    <h2>Variable Hoisting</h2>
+    <p id="variableExample"></p>
+
+    <script>
+      // Example 1: Variable declaration is hoisted
+      console.log(x); // Output: undefined
+      var x = 5;
+      console.log(x); // Output: 5
+
+      // Example 2: Function declaration is hoisted
+      console.log(sayHello()); // Output: "Hello!"
+      function sayHello() {
+        return "Hello!";
+      }
+
+      // Example 3: Function declaration overrides variable declaration
+      var y = 10;
+      function y() {}
+      console.log(typeof y); // Output: "function"
+
+      // Example 4: Variable declaration within a block
+      console.log(z); // Output: undefined
+      {
+        var z = 20;
+      }
+      console.log(z); // Output: 20
+    </script>
+
+    <h2>Function Hoisting</h2>
+    <p id="functionExample"></p>
+
+    <script>
+      // Example 5: Function declaration is hoisted
+      sayHi(); // Output: "Hi!"
+      function sayHi() {
+        document.getElementById("functionExample").innerText = "Hi!";
+      }
+    </script>
+  </body>
+</html>

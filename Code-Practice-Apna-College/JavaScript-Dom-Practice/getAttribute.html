@@ -1,0 +1,38 @@
+<!-- In JavaScript, the getAttribute() method is used to retrieve the value of a specified attribute on an element. Here's how you can use it: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getAttribute Example</title>
+  </head>
+  <body>
+    <div id="myDiv" data-custom-attribute="value">Example Div</div>
+
+    <script>
+      // Accessing the value of a custom attribute using getAttribute
+      var divElement = document.getElementById("myDiv");
+      var customAttributeValue = divElement.getAttribute(
+        "data-custom-attribute"
+      );
+      console.log("Custom Attribute Value: " + customAttributeValue); // Output: "value"
+
+      // Accessing the value of a standard attribute
+      var classAttributeValue = divElement.getAttribute("class");
+      console.log("Class Attribute Value: " + classAttributeValue); // Output: null (if no class attribute is defined)
+
+      // Attempting to access a non-existing attribute
+      var nonExistingAttribute = divElement.getAttribute(
+        "non-existing-attribute"
+      );
+      console.log("Non-Existing Attribute Value: " + nonExistingAttribute); // Output: null
+    </script>
+  </body>
+</html>
+<!-- In this example:
+
+We have a <div> element with the id "myDiv" and a custom attribute data-custom-attribute with the value "value".
+We use the getAttribute() method to retrieve the value of the custom attribute and log it to the console.
+We also demonstrate trying to retrieve the value of a standard attribute (class), which would return null if the attribute is not present.
+Finally, we show attempting to retrieve the value of a non-existing attribute, which would also return null.
+This method is useful when you need to access custom data attributes or any other attributes of an HTML element in JavaScript. -->

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call-Back</title>
+  </head>
+  <body>
+    <h2>Call-Back in JS</h2>
+    <p>
+      In JavaScript, a callback is a function that is passed as an argument to
+      another function and is executed after the completion of some operation or
+      task. Callbacks are commonly used in asynchronous programming to handle
+      operations that may take some time to complete, such as fetching data from
+      a server, reading a file, or performing animations.
+    </p>
+    <script>
+      // In JavaScript, a callback is a function that is passed as an argument to another function and is executed after the completion of some operation or task. Callbacks are commonly used in asynchronous programming to handle operations that may take some time to complete, such as fetching data from a server, reading a file, or performing animations.
+
+      // Here's a basic example of how callbacks work in JavaScript:
+      // Function that takes a callback
+      function fetchData(callback) {
+        // Simulating asynchronous operation (e.g., fetching data from a server)
+        setTimeout(function () {
+          const data = { name: "John", age: 30 };
+          // Once data is fetched, execute the callback with the data
+          callback(data);
+        }, 2000); // Simulating a delay of 2000 milliseconds (2 seconds)
+      }
+
+      // Callback function to handle fetched data
+      function processData(data) {
+        console.log("Received data:", data);
+      }
+
+      // Calling the function fetchData and passing the callback processData
+      fetchData(processData);
+      //   In this example:
+
+      // The fetchData function simulates an asynchronous operation (like fetching data from a server) using setTimeout.
+      // It takes a callback function callback as an argument.
+      // After the asynchronous operation is completed (after 2 seconds in this case), it executes the callback function callback and passes the fetched data to it.
+      // We define a callback function processData that logs the received data to the console.
+      // We call fetchData and pass processData as the callback function.
+      // When fetchData completes its task, it executes the processData function with the fetched data as its argument.
+
+      // Callbacks are fundamental in JavaScript for handling asynchronous operations, but they can sometimes lead to "callback hell" or deeply nested code when multiple asynchronous operations need to be executed sequentially. This issue has been mitigated with the introduction of Promises and async/await in modern JavaScript.
+
+      //Example NO-2..
+      //  program that shows the delay in execution
+
+      function greet() {
+        console.log("Hello world");
+      }
+
+      function sayName(name) {
+        console.log("Hello" + " " + name);
+      }
+
+      // calling the function
+      setTimeout(greet, 2000);
+      sayName("Sahil");
+      // Example No--3...
+      // Callback Function Example
+      function greet(name, myFunction) {
+        console.log("Hello world");
+
+        // callback function
+        // executed only after the greet() is executed
+        myFunction(name);
+      }
+
+      // callback function
+      function sayName(name) {
+        console.log("Hello" + " " + name);
+      }
+
+      // calling the function after 2 seconds
+      setTimeout(greet, 2000, "Sahil", sayName);
+    </script>
+  </body>
+</html>

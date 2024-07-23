@@ -1,0 +1,24 @@
+<!-- Certainly! The prepend() method is used to insert content, specified by the parameter, to the beginning of each element in the set of matched elements. Here's how you can use it: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prepend Example</title>
+  </head>
+  <body>
+    <div id="parent">
+      <h2>Parent Element</h2>
+      <div id="existing">Existing Content</div>
+    </div>
+
+    <script>
+      // Using prepend()
+      var parent = document.getElementById("parent");
+      var newElement = document.createElement("div");
+      newElement.textContent = "Prepended Content";
+      parent.prepend(newElement);
+    </script>
+  </body>
+</html>
+<!-- In this example, the prepend() method is used to add a new div element with the text content 'Prepended Content' at the beginning of the parent element. -->

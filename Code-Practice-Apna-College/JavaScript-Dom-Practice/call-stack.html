@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>call-stack</title>
+  </head>
+  <body>
+    <h2>Call-Stack...</h2>
+    <script>
+      function one() {
+        return 1;
+      }
+      function two() {
+        return one() + one();
+      }
+      function three() {
+        let result = two() + one();
+        console.log(`Value of Result = ${result}`);
+      }
+      three();
+    </script>
+  </body>
+</html>

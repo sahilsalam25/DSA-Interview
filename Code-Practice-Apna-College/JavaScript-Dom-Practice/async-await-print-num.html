@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async & await</title>
+  </head>
+  <body>
+    <h2>async & await</h2>
+    <h3>
+      Async/Await is the extension of promises that we get as support in the
+      language.<br />
+
+      What is Async Function ? Async simply allows us to write promises-based
+      code as if it was synchronous and it checks that we are not breaking the
+      execution thread.
+      <br />
+      Async functions will always return a value. It makes sure that a promise
+      is returned and if it is not returned then JavaScript automatically wraps
+      it in a promise which is resolved with its value.
+    </h3>
+    <h2>
+      <b> What is Await Function ?</b>
+      Await function is used to wait for the promise. It could be used within
+      the async block only. It makes the code wait until the promise returns a
+      result.
+    </h2>
+    <script>
+      // Demo 1 with number:
+      function getNumber() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let num = Math.floor(Math.random() * 10) + 1;
+            console.log(num);
+            resolve();
+          }, 1000);
+        });
+      }
+      console.log(" demo num ...");
+      getNumber();
+      //   getNumber();
+      //   getNumber();
+      //   getNumber();
+      //   getNumber();
+      async function demo() {
+        // all 4 getNumber() prints num within 1 sec so thats why we use await... to overcome this
+        console.log(
+          "without using the await...it print all 4 numbers according with settimeout delay..."
+        );
+        getNumber(); // it print after 1 sec
+        getNumber(); // just  print another number without delay
+        getNumber(); // just  print another number without delay
+        getNumber(); // it print after 1 sec //just  print another number without delay
+        console.log(
+          "with using the await...await print one by one according with settimeout delay..."
+        );
+        console.log("num 1 = ");
+        await getNumber(); // it print after 1 sec
+        console.log("num 2 = ");
+        await getNumber(); // it print after 1 sec
+        console.log("num 3 = ");
+        await getNumber(); // it print after 1 sec
+        console.log("num 4 = ");
+        getNumber();
+      }
+      demo();
+      //   try {
+      //     async function demo() {
+      //       console.log("num 2 ...");
+      //       await getNumber();
+      //       console.log("num 3 ...");
+      //       getNumber();
+      //       console.log("num 4 ...");
+      //       getNumber();
+      //     }
+      //   } catch (error) {
+      //     console.log("eror...", error);
+      //   }
+    </script>
+  </body>
+</html>

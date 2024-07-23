@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIFE</title>
+  </head>
+  <body>
+    <h2>
+      IIFE stands for Immediately Invoked Function Expression. It is a
+      JavaScript design pattern that allows a function to execute immediately
+      after it’s defined. This pattern is commonly used to create a local scope
+      for variables, preventing them from polluting the global scope.
+      <br />
+
+      Here's a simple example of an IIFE:
+    </h2>
+    <p>
+      Converting Functions to IIFEs... <br />
+
+      As we have already seen what an IIFE is and how its syntaxial form can be
+      broken down to make more sense, We can convert a regular function into an
+      IIFE following only two steps as follows. <br />
+
+      Given any regular function definition, wrap the definition within a closed
+      pair of parentheses, this will create your Function Expression. <br />
+      Lastly, add another pair of parentheses and a semicolon to mark the end of
+      the statement, and you have converted your regular Function into an IIFE.
+      <br />
+    </p>
+    <p>
+      IIFEs have their own scope i.e. the variables you declare in the Function
+      Expression will not be available outside the function.<br />
+      Similarly to other functions IIFEs can also be named or anonymous, but
+      even if an IIFE does have a name it is impossible to refer/invoke it.<br />
+      IIFEs can also have parameters. For example, <br />
+    </p>
+    <h3>Use Cases Of IIFE</h3>
+    <ul>
+      <li>Avoid polluting the global namespace</li>
+      <li>To create closures</li>
+      <li>Avoid conflict of variable names between libraries and programs.</li>
+      <li>IIFE is used to create private and public variables and methods</li>
+      <li>It is used to execute the async and await function</li>
+      <li>It is used in JQuery Library</li>
+      <li>It is used to work with require function</li>
+    </ul>
+
+    <script>
+      // Declaring the parameter required.
+      (function (dt) {
+        console.log(dt.toLocaleTimeString());
+        // Passing the Parameter.
+      })(new Date());
+
+      // Regular Function.
+      function Greet() {
+        console.log(
+          "Using Normal Function\n Welcome to Normal Function CODE...!"
+        );
+      }
+      // Execution of Regular Function.
+      Greet();
+
+      // IIFE creation and execution.
+      (function () {
+        console.log("Using IIFE Function\nWelcome to IIFE CODE...");
+      })();
+      // we can pass parameter also in IIFE...
+      (function printName(name) {
+        console.log("Name = ", name);
+      })("Abdul Salam");
+      // we can write multiple IIFE Function's...
+      (function printName(name) {
+        console.log("Name = ", name);
+      })("Amir Salam"); // important ...while writing more than one or  multiple IIFE Function's use ; semicolon
+      (function printName(name) {
+        console.log("Name = ", name);
+      })("Sahil Salam");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call-Method</title>
+  </head>
+  <body>
+    <h2>call()</h2>
+    <h3>
+      With the call() method, you can write a method that can be used on
+      different objects.
+    </h3>
+    <h4>
+      Methods like call(), apply(), and bind() can refer this to any object.
+    </h4>
+    <h3>
+      The JavaScript call() Method<br />
+      The call() method is a predefined JavaScript method.
+    </h3>
+    <p>
+      It can be used to invoke (call) a method with an owner object as an
+      argument (parameter).<br />
+
+      With call(), an object can use a method belonging to another object.<br />
+    </p>
+    <script>
+      // This example calls the fullName method of person, using it on person1:
+      //   const person = {
+      //     fullName: function () {
+      //       return this.firstName + " " + this.lastName;
+      //     },
+      //   };
+      //   const person1 = {
+      //     firstName: "Sahil",
+      //     lastName: "Salam",
+      //   };
+      //   const person2 = {
+      //     firstName: "Amir",
+      //     lastName: "Salam",
+      //   };
+
+      //   // This will return "Sahil Salam":
+      //   person.fullName.call(person1);
+
+      //This example calls the fullName method of person, using it on person2:
+      const person = {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      const person1 = {
+        firstName: "Sahil",
+        lastName: "Salam",
+      };
+      const person2 = {
+        firstName: "Amir",
+        lastName: "Salam",
+      };
+
+      // This will return "Amir Salam"
+      person.fullName.call(person2);
+
+      // Example-3
+      // The call() Method with Arguments.........
+      // The call() method can accept arguments:
+
+      // const person = {
+      //   fullName: function(city, country) {
+      //     return this.firstName + " " + this.lastName + "," + city + "," + country;
+      //   }
+      // }
+
+      // const person1 = {
+      //   firstName:"Sahil",
+      //   lastName: "Salam"
+      // }
+
+      // person.fullName.call(person1, "Nawada", "India");
+    </script>
+  </body>
+</html>

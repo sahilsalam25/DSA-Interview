@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Promise</title>
+  </head>
+  <body>
+    <h2>Promise Chaining</h2>
+    <h3></h3>
+    <script>
+      function saveToDataBase(data) {
+        return new Promise((resolve, reject) => {
+          let internetSpeed = Math.floor(Math.random() * 6) + 1; // it print random numbers from 1 to 7:
+          if (internetSpeed > 3) {
+            resolve("Success...! Data Saved");
+          } else {
+            reject("Failed to Save Data... Weak Connection...............!");
+          }
+        });
+      }
+
+      // Method-3 compact method  to print promise request
+      saveToDataBase("Abdul Salam")
+        .then((result) => {
+          console.log("Promise Resolved...Data 1 Saved");
+          console.log("Result of promise is...", result);
+          return saveToDataBase("Amir Salam");
+        })
+        .then((result) => {
+          console.log("Promise Resolved...Data 2 Saved");
+          console.log("Result of promise is...", result);
+          return saveToDataBase("Sahil Salam");
+        })
+        .then((result) => {
+          console.log("Promise Resolved...Data 3 Saved");
+          console.log("Result of promise is...", result);
+        })
+        .catch((error) => {
+          console.log("Promise Rejected...");
+          console.log("Error of promise is...", error);
+        });
+    </script>
+  </body>
+</html>

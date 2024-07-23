@@ -1,0 +1,66 @@
+<!-- It seems like you're asking about a data structure called a "stack" in JavaScript. A stack is a last-in, first-out (LIFO) data structure, meaning the last element added to the stack is the first one to be removed. In JavaScript, you can implement a stack using an array.
+
+Here's a simple implementation of a stack in JavaScript: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack...</title>
+  </head>
+  <body>
+    <h2>Stack...</h2>
+    <script>
+      class Stack {
+        constructor() {
+          this.items = [];
+        }
+
+        // Push element to the top of the stack
+        push(element) {
+          this.items.push(element);
+        }
+
+        // Remove and return the top element from the stack
+        pop() {
+          if (this.isEmpty()) {
+            return "Underflow";
+          }
+          return this.items.pop();
+        }
+
+        // Return the top element from the stack without removing it
+        peek() {
+          return this.items[this.items.length - 1];
+        }
+
+        // Check if the stack is empty
+        isEmpty() {
+          return this.items.length === 0;
+        }
+
+        // Return the size of the stack
+        size() {
+          return this.items.length;
+        }
+
+        // Print the stack elements
+        print() {
+          console.log(this.items.toString());
+        }
+      }
+
+      // Example usage:
+      const stack = new Stack();
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+      stack.print(); // Output: 1,2,3
+      console.log("Size:", stack.size()); // Output: 3
+      console.log("Peek:", stack.peek()); // Output: 3
+      console.log("Pop:", stack.pop()); // Output: 3
+      stack.print(); // Output: 1,2
+    </script>
+  </body>
+</html>
+<!-- This code defines a Stack class with methods to push, pop, peek, check if the stack is empty, and print its elements. You can create a new stack instance using const stack = new Stack() and then use its methods to manipulate the stack. -->

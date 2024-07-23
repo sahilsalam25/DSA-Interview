@@ -1,0 +1,41 @@
+<!-- extracting-form-data using value property-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Input Events</title>
+  </head>
+  <body>
+    <h2>Form-Events:Change Input Events</h2>
+    <form action="/action">
+      <input id="user" type="text" placeholder="username" required />
+      <input id="pass" type="password" placeholder="enter password" required />
+      <button>Register...</button>
+    </form>
+    <script>
+      let form = document.querySelector("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        // console.dir(form);
+        alert("form submitted...!");
+
+        //Method 2 using this property
+        // let user = this.elements[0]; // it is similar as form[0]=username value;
+        // let pass = this.elements[1]; // it is similar as form[1]=password value;
+        // console.log(`usename =${user.value}`);
+        // console.log(`password =${pass.value}`);
+        // alert(`Hi...${user.value} Your Password is set to ${pass.value}`);
+      });
+      let user = document.querySelector("#user");
+      user.addEventListener("change", function () {
+        console.log("Change Event...");
+        console.log("Final Value of Change Event = ", this.value); // it is similar - console.log('Final Value of Change Event...',user.value);
+      });
+      user.addEventListener("input", function () {
+        console.log("Input Event...");
+        console.log("Final Value of Input Event = ", this.value);
+      });
+    </script>
+  </body>
+</html>

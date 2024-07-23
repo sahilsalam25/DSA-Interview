@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function & function expression</title>
+  </head>
+  <body>
+    <h2>function expression in JS...</h2>
+    <h3>
+      A function expression in JavaScript is a way to define a function as part
+      of an expression, usually by assigning it to a variable. Unlike function
+      declarations, which are hoisted to the top of the scope, function
+      expressions are not hoisted. They are evaluated at runtime, like any other
+      expression.<br />
+
+      Here's an example of a function expression:
+    </h3>
+    <h5>
+      const add = function(a, b) {<br />
+      return a + b;<br />
+      };<br />
+
+      console.log(add(2, 3)); // Output: 5<br />
+    </h5>
+    <p>
+      In this example:<hr />
+
+      We define a function using the function keyword, but instead of using a
+      function declaration (where the function name comes before the
+      parentheses), we assign the function to a variable add.<hr />
+      This function is anonymous because it doesn't have a name, but it's
+      assigned to the variable add.<hr />
+      We can then use the add variable to call the function, passing arguments 2
+      and 3.<hr />
+      This function expression is only available after the line where it's
+      defined; it's not hoisted like function declarations.<hr />
+    </p>
+    <h3>Function expressions are commonly used in scenarios where functions are passed as arguments to other functions (higher-order functions), or in situations where you want to create a function conditionally or within a block of code.</h3>
+    <h2>Difference bw function & function expression?
+        <hr>
+        The main difference between a function declaration and a function expression lies in how and when they are defined and hoisted.</h2>
+        <p>
+            Function Declaration:<br>
+
+A function declaration defines a named function using the function keyword.<br>
+
+Function declarations are hoisted, meaning they are moved to the top of their scope during the compilation phase.<br> This allows you to call the function before it's defined in the code.<br>
+
+Here's an example of a function declaration:<br>
+<h4>
+    function add(a, b) {<br>
+        return a + b;<br>
+      }
+      
+</h4>
+        </p>
+        <p>
+            Function Expression:<br>
+
+A function expression defines a function as part of an expression, usually by assigning it to a variable.<br>
+
+Function expressions are not hoisted like function declarations. They are evaluated at runtime, like any other expression.<br>
+
+Function expressions can be named (in which case they can be used within the function itself for recursion or better stack traces) or anonymous (where they are assigned to a variable without a name).<br>
+
+Here's an example of a named function expression:<br>
+<h3>
+    const add = function(a, b) {<br>
+        return a + b;<br>
+      };
+      <h1>And here's an example of an anonymous function expression:</h1>
+      <h3>
+        const subtract = function(a, b) {<br>
+            return a - b;<br>
+          };
+          
+      </h3>
+      
+</h3>
+        </p>
+        <h1 style="color:deepskyblue">In summary:...</h1>
+        <p>
+      <ul>     
+<li>
+
+Function declarations are defined using the function keyword and are hoisted to the top of their scope.</li>
+<li>Function expressions are defined as part of an expression and are <b style="color: rgb(36, 159, 180);"> not hoisted</b>. They can be named or anonymous and are often assigned to variables.</li></ul> 
+        </p>
+  </body>
+</html>

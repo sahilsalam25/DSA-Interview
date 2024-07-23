@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Qs1. Create a new input and button element on the page using JavaScript
+      only. Set the text of button to “Click me”;
+    </h1>
+    Here is the answer :
+    <div id="div-id">
+      <br />
+    </div>
+    <script>
+      let divBox = document.getElementById("div-id");
+      let input = document.createElement("input");
+      let button = document.createElement("button");
+      button.innerText = "Click me";
+      input.setAttribute("placeholder", "username");
+      button.setAttribute("button", "btn");
+      let btn = document.querySelector("#btn");
+      //   btn.style.backgroundColor = "blue";
+
+      divBox.append(input);
+      let heading = document.createElement("h1");
+      heading.innerText = "DOM Practice";
+      divBox.append(heading);
+
+      divBox.append(button);
+      let p = document.createElement("para");
+      p.innerHTML = "Apna College <b>Delta </b> Practice";
+      divBox.append(p);
+    </script>
+  </body>
+</html>

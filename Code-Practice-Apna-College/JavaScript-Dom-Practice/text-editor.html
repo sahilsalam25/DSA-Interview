@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text-Editor</title>
+    <style>
+      div {
+        width: 80vw;
+        height: 70vh;
+        border: 1.5px solid rgba(0, 0, 0, 0.814);
+        margin-top: 2vh;
+      }
+      h3 {
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Text-Editor</h2>
+    <input type="text" />
+    <div>
+      <!-- <h3>Text is ....</h3> -->
+    </div>
+
+    <script>
+      let inp = document.querySelector("input");
+      inp.addEventListener("input", function () {
+        console.log("Input Value...", inp.value);
+        let div = document.querySelector("div");
+        div.innerText = inp.value;
+      });
+    </script>
+  </body>
+</html>

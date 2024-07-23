@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(Hello);
+      var Hello = "Hi...";
+      console.log(Hello);
+      console.log("Hello Demo...");
+      let n = prompt("Enter the value of n :");
+      n = parseInt;
+      for (let i = 1; i <= 10; i++) {
+        console.log(i * i);
+      }
+      // Prompt the user for input and store the result in a variable
+      let userInput = prompt("Enter something:");
+
+      // Display the user input
+      console.log("You entered: " + userInput);
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Input Example</title>
+  </head>
+  <body>
+    <!-- HTML form with an input field and a button -->
+    <form id="userInputForm">
+      <label for="userInputField">Enter something:</label>
+      <input type="text" id="userInputField" />
+      <button type="button" onclick="getUserInput()">Submit</button>
+      <h1 id="heading"></h1>
+    </form>
+
+    <script>
+      // JavaScript function to handle the form submission
+      function getUserInput() {
+        // Get the value from the input field
+        let userInput = document.getElementById("userInputField").value;
+
+        // Display the user input
+        console.log("You entered: " + userInput);
+        document.getElementById("heading").innerText = userInput.toUpperCase();
+      }
+      let num = prompt("Enter Any Number :");
+      num = parseInt(num);
+      console.log(num);
+      // function printTable(num) {
+      for (i = num; i <= num * 10; i += num) {
+        console.log(` ${num} X ${i / num} = ${i}`);
+      }
+
+      // }
+      // console.log(printTable(2));
+      // printTable(1);
+      // printTable(2);
+      // printTable(3);
+    </script>
+  </body>
+</html>

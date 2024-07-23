@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let and Const Hoisting Examples</title>
+  </head>
+  <body>
+    <h3 style="color: rgb(34, 231, 166)">
+      In JavaScript, let and const declarations are hoisted but not initialized.
+      This means that the variables declared with let and const are hoisted to
+      the top of their block scope, but they are not initialized with a value
+      until the actual declaration statement is reached in the code. This
+      behavior is often referred to as "temporal dead zone".
+    </h3>
+    <h2>Let Hoisting</h2>
+    <p id="letExample"></p>
+
+    <script>
+      // Example 1: Let declaration is hoisted but not initialized
+      console.log(a); // Output: Uncaught ReferenceError: Cannot access 'a' before initialization
+      let a = 10;
+
+      // Example 2: Let declaration within a block is hoisted but not initialized
+      console.log(b); // Output: Uncaught ReferenceError: Cannot access 'b' before initialization
+      {
+        let b = 20;
+      }
+
+      // Example 3: Let declaration in a loop is hoisted but not initialized
+      for (let i = 0; i < 3; i++) {
+        console.log(i); // Output: 0, 1, 2
+      }
+
+      // Example 4: Let declaration in a loop is hoisted but not initialized
+      console.log(i); // Output: Uncaught ReferenceError: i is not defined
+    </script>
+
+    <h2>Const Hoisting</h2>
+    <p id="constExample"></p>
+
+    <script>
+      // Example 5: Const declaration is hoisted but not initialized
+      console.log(c); // Output: Uncaught ReferenceError: Cannot access 'c' before initialization
+      const c = 30;
+
+      // Example 6: Const declaration within a block is hoisted but not initialized
+      console.log(d); // Output: Uncaught ReferenceError: Cannot access 'd' before initialization
+      {
+        const d = 40;
+      }
+
+      // Example 7: Const declaration in a loop is hoisted but not initialized
+      for (const j = 0; j < 3; j++) {
+        console.log(j); // Output: 0, 1, 2
+      }
+
+      // Example 8: Const declaration in a loop is hoisted but not initialized
+      console.log(j); // Output: Uncaught ReferenceError: j is not defined
+    </script>
+  </body>
+</html>

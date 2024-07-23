@@ -1,0 +1,38 @@
+<!-- Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation Example</title>
+  </head>
+  <body>
+    <ul id="parent-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+
+    <script>
+      // Attaching event listener to the parent ul element
+      document
+        .getElementById("parent-list")
+        .addEventListener("click", function (event) {
+          // Checking if the clicked element is an li element
+          if (event.target.tagName === "LI") {
+            // Perform action on li elements
+            console.log("You clicked on:", event.target.textContent);
+          }
+        });
+    </script>
+  </body>
+</html>
+<!-- Above is an example:
+Here's how it works:
+
+Attach Event Listener to Ancestor Element: You attach an event listener to a common ancestor of the elements you're interested in. This could be the document object or any other parent element that contains the elements you want to track.
+
+Check Target Element: When the event occurs, the event object contains information about the target element on which the event was triggered (event.target).
+
+Delegate Action Based on Target Element: You check the event.target to determine if it matches the specific elements you're interested in. If it does, you perform the desired action. -->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard-Events</title>
+  </head>
+  <body>
+    <h2>This is Tutorial of <b>Keyboard-Events</b></h2>
+    <input type="text" placeholder="Type Something..." />
+    <button>Click Me...</button>
+
+    <script>
+      let inp = document.querySelector("input");
+      inp.addEventListener("keydown", function (event) {
+        // console.log(event);
+        console.log("Key =", event.key);
+        console.log("Code =", event.code); // ArrowUp(u),ArrowDown(d),ArrowLeft(l),ArrowRifgt(r):
+        if (event.code == "KeyU") {
+          console.log("Key UP is Pressed... Character Moves Upward");
+        } else if (event.code == "KeyD") {
+          console.log("Key DOWN is Pressed... Character Moves Downward");
+        } else if (event.code == "KeyR") {
+          console.log("Key RIGHT is Pressed... Character Moves Right");
+        } else if (event.code == "KeyL")
+          console.log("Key LEFT is Pressed... Character Moves Left");
+      });
+      //   inp.addEventListener("keyup", function () {
+      //     alert("Key UP is Pressed...");
+      //   });
+    </script>
+  </body>
+</html>

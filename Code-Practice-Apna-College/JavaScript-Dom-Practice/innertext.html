@@ -1,0 +1,30 @@
+<!-- In JavaScript, you can access and manipulate the text content of HTML elements using properties like innerText and textContent. These properties allow you to retrieve or update the text content within an element. Here's how you can use them: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerText and textContent Example</title>
+  </head>
+  <body>
+    <div id="myDiv">Original Text</div>
+
+    <script>
+      // Accessing the text content using innerText
+      var divElement = document.getElementById("myDiv");
+      var innerTextContent = divElement.innerText;
+      console.log("innerText: " + innerTextContent); // Output: "Original Text"
+
+      // Accessing the text content using textContent
+      var textContent = divElement.textContent;
+      console.log("textContent: " + textContent); // Output: "Original Text"
+
+      // Updating the text content using innerText
+      divElement.innerText = "Updated Text with innerText";
+
+      // Updating the text content using textContent
+      divElement.textContent = "Updated Text with textContent";
+    </script>
+  </body>
+</html>
+<!-- Both innerText and textContent serve similar purposes, but they have subtle differences. innerText considers styling and only returns visible text, while textContent returns all text contained within an element, including text within <script> or <style> elements, and is faster. -->

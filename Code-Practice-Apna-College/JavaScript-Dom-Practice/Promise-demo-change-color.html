@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Back Hell</title>
+  </head>
+  <body>
+    <h1>
+      Call Back Hell...in JavaScript...
+      <hr />
+      Promise Chaining: Promise Chaining is a simple concept by which we may
+      initialize another promise inside our .then() method and accordingly we
+      may execute our results. The function inside then captures the value
+      returned by the previous promise.<br />
+    </h1>
+    <h2>
+      Using the Promise Method...... Changing the h2's text color after some
+      seconds...<br />
+      how to perform Promise Chaining in JavaScript. A Promise is basically an
+      object which represents the completion (or failure) of an asynchronous
+      operation along with its result. <br />
+
+      A promise has 3 types of states and based upon these states, the promise
+      executes the results.<br />
+
+      Pending: This state represents either an initial state or fulfilled state
+      or rejected state.<br />
+      Fulfilled: This state represents that the asynchronous operation is
+      successfully completed.<br />
+      Rejected: This state represents that the asynchronous operation is
+      rejected.
+    </h2>
+    <script>
+      // Method--- Using the Promise Method... Changing the h1's text color after 1 second...
+      let h1 = document.querySelector("h1");
+      let h2 = document.querySelector("h2");
+      function changeColor(color, delay) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            h1.style.color = color;
+            //     h2.innerText = `Using the Promise Method...... Changing the h2's text color after some
+            // seconds...`;
+            h2.style.color = color;
+
+            resolve("Color Changed.......!");
+          }, delay);
+        });
+      }
+      // optional want to check promise state...
+      let request = changeColor("green", 1500);
+      console.log(request);
+      // optional want to check promise state...
+      changeColor("green", 1500)
+        .then(() => {
+          console.log("Green Color Completed...!");
+          return changeColor("yellow", 1800);
+        })
+        .then(() => {
+          console.log("Yellow Color Completed...!");
+          return changeColor("blue", 2000);
+        })
+        .then(() => {
+          console.log("Blue Color Completed...!");
+          return changeColor("aqua", 2300);
+        })
+        .then(() => {
+          console.log("Aqua Color Completed...!");
+          return changeColor("purple", 2600);
+        })
+        .then(() => {
+          console.log("Purple Color Completed...!");
+        });
+    </script>
+  </body>
+</html>

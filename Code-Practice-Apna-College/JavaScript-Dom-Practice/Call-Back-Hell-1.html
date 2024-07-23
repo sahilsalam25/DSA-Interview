@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Back Hell</title>
+  </head>
+  <body>
+    <h1>
+      Call Back Hell...in JavaScript...
+      <hr />
+      Callback hell, also known as "pyramid of doom," is a situation in
+      JavaScript programming where multiple asynchronous operations are nested
+      within each other, resulting in code that is difficult to read,
+      understand, and maintain. This nesting occurs when callbacks are used to
+      handle asynchronous tasks, and those tasks are dependent on the completion
+      of other tasks.
+    </h1>
+    <h2>
+      Using the Call Back Hell...... Changing the h2's text color after some
+      seconds...
+    </h2>
+    <script>
+      // Method-1 Using the Call Back Hell... Changing the h1's text color after 1 second...
+      let h1 = document.querySelector("h1");
+      let h2 = document.querySelector("h2");
+      function changeColor(color, delay, nextColorChange) {
+        setTimeout(() => {
+          h1.style.color = color;
+          h2.style.color = color;
+          if (nextColorChange) nextColorChange();
+        }, delay);
+      }
+      changeColor("green", 1000, () => {
+        changeColor("red", 1000, () => {
+          changeColor("yellow", 1000, () => {
+            changeColor("blue", 1000, () => {
+              changeColor("aqua", 1000);
+            });
+          });
+        });
+      });
+
+      // Method-2 Using the Promise Method... Changing the h1's text color after 1 second...
+      //   let h1 = document.querySelector("h1");
+      //   let h2 = document.querySelector("h2");
+      //   function changeColor(color, delay) {
+      //     return new Promise((resolve, reject) => {
+      //       setTimeout(() => {
+      //         h1.style.color = color;
+      //         h2.innerText = `Using the Promise Method...... Changing the h2's text color after some
+      //   seconds...`;
+      //         h2.style.color = color;
+
+      //         resolve("Color Changed.......!");
+      //       }, delay);
+      //     });
+      //   }
+      //   changeColor("green", 1500)
+      //     .then(() => {
+      //       return changeColor("yellow", 1800);
+      //     })
+      //     .then(() => {
+      //       return changeColor("blue", 2000);
+      //     })
+      //     .then(() => {
+      //       return changeColor("aqua", 2300);
+      //     })
+      //     .then(() => {
+      //       return changeColor("purple", 2600);
+      //     });
+    </script>
+  </body>
+</html>

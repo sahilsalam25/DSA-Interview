@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP Status Codes</title>
+  </head>
+  <body>
+    <h1>HTTP Status Codes</h1>
+    <h4>
+      The Status-Code element in a server response, is a 3-digit integer where
+      the first digit of the Status-Code defines the class of response and the
+      last two digits do not have any categorization role. There are 5 values
+      for the first digit:<br />
+
+      S.N. Code and Description <br />
+      1 1xx: Informational It means the request has been received and the
+      process is continuing.
+      <br />
+      2 2xx: Success It means the action was successfully received, understood,
+      and accepted.
+      <br />
+      3 3xx: Redirection It means further action must be taken in order to
+      complete the request.
+      <br />
+      4 4xx: Client Error It means the request contains incorrect syntax or
+      cannot be fulfilled.
+      <br />
+      5 5xx: Server Error It means the server failed to fulfill an apparently
+      valid request.
+      <br />
+      HTTP status codes are extensible and HTTP applications are not required to
+      understand the meaning of all the registered status codes. Given below is
+      a list of all the status codes.<br />
+    </h4>
+    <h1>HTTP Status Codes.....</h1>
+    <hr />
+
+    <ul id="status-codes"></ul>
+
+    <script>
+      // Object containing HTTP status codes and their corresponding messages
+      const statusCodes = {
+        100: "Continue",
+        101: "Switching Protocols",
+        200: "OK",
+        201: "Created",
+        202: "Accepted",
+        203: "Non-Authoritative Information",
+        204: "No Content",
+        205: "Reset Content",
+        206: "Partial Content",
+        300: "Multiple Choices",
+        301: "Moved Permanently",
+        302: "Found",
+        303: "See Other",
+        304: "Not Modified",
+        305: "Use Proxy",
+        307: "Temporary Redirect",
+        308: "Permanent Redirect",
+        400: "Bad Request",
+        401: "Unauthorized",
+        402: "Payment Required",
+        403: "Forbidden",
+        404: "Not Found",
+        405: "Method Not Allowed",
+        406: "Not Acceptable",
+        407: "Proxy Authentication Required",
+        408: "Request Timeout",
+        409: "Conflict",
+        410: "Gone",
+        411: "Length Required",
+        412: "Precondition Failed",
+        413: "Payload Too Large",
+        414: "URI Too Long",
+        415: "Unsupported Media Type",
+        416: "Range Not Satisfiable",
+        417: "Expectation Failed",
+        418: "I'm a teapot",
+        421: "Misdirected Request",
+        422: "Unprocessable Entity",
+        423: "Locked",
+        424: "Failed Dependency",
+        426: "Upgrade Required",
+        428: "Precondition Required",
+        429: "Too Many Requests",
+        431: "Request Header Fields Too Large",
+        451: "Unavailable For Legal Reasons",
+        500: "Internal Server Error",
+        501: "Not Implemented",
+        502: "Bad Gateway",
+        503: "Service Unavailable",
+        504: "Gateway Timeout",
+        505: "HTTP Version Not Supported",
+        506: "Variant Also Negotiates",
+        507: "Insufficient Storage",
+        508: "Loop Detected",
+        510: "Not Extended",
+        511: "Network Authentication Required",
+      };
+
+      // Function to populate the list of status codes
+      function populateStatusCodes() {
+        const list = document.getElementById("status-codes");
+        for (const code in statusCodes) {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${code}: ${statusCodes[code]}`;
+          list.appendChild(listItem);
+        }
+      }
+
+      // Call the function to populate status codes when the page loads
+      window.onload = populateStatusCodes;
+    </script>
+  </body>
+</html>

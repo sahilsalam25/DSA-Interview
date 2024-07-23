@@ -1,0 +1,36 @@
+<!-- In JavaScript, the setAttribute() method is used to set the value of a specified attribute on an element. Here's how you can use it: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setAttribute Example</title>
+  </head>
+  <body>
+    <div id="myDiv">Example Div</div>
+
+    <script>
+      // Accessing the element
+      var divElement = document.getElementById("myDiv");
+
+      // Setting a new attribute
+      divElement.setAttribute("data-custom-attribute", "new value");
+
+      // Setting another attribute
+      divElement.setAttribute("class", "custom-class");
+
+      // Logging the updated attributes
+      console.log(
+        "Custom Attribute Value:",
+        divElement.getAttribute("data-custom-attribute")
+      ); // Output: "new value"
+      console.log("Class Attribute Value:", divElement.getAttribute("class")); // Output: "custom-class"
+    </script>
+  </body>
+</html>
+<!-- In this example:
+
+We have a <div> element with the id "myDiv".
+We use the setAttribute() method to set a custom attribute data-custom-attribute with the value "new value" and a standard attribute class with the value "custom-class".
+We then use getAttribute() to retrieve the values of both attributes and log them to the console to confirm they've been set correctly.
+setAttribute() can be particularly useful when you need to dynamically set attributes on HTML elements in JavaScript, for example, when creating elements programmatically or when modifying existing elements based on user interactions or other events. -->

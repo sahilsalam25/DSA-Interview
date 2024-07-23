@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-List</title>
+  </head>
+  <body>
+    <h2>To-Do-List</h2>
+    <input placeholder="type your task" />
+    <button>Click To Add...</button>
+    <ul>
+      <li>Read <button class="deletebtn" id="delete1">Delete</button></li>
+      <li>Code <button class="deletebtn" id="delete2">Delete</button></li>
+    </ul>
+    <script>
+      let inp = document.querySelector("input");
+      let btn = document.querySelector("button");
+      let ul = document.querySelector("ul");
+
+      //   inp.addEventListener("input", function () {
+      //     console.log(inp.value);
+      //   });
+      btn.addEventListener("click", function () {
+        let items = document.createElement("li");
+        items.innerText = inp.value;
+        let delBtn = document.createElement("button");
+
+        delBtn.innerText = "delete";
+        delBtn.classList.add("deletebtn");
+        items.appendChild(delBtn);
+        ul.appendChild(items);
+
+        inp.value = "";
+        // for (lis of list) {
+        //   lis.innerText = inp.value;
+        // }
+      });
+      // below is the example of event delegation...
+      ul.addEventListener("click", function (event) {
+        // console.dir(event);
+        // console.log(event.target.nodeName);
+        // this function is optional...
+        function confirm() {
+          alert("Are You Sure Want to Delete...");
+          return true;
+        }
+        if (event.target.nodeName == "BUTTON" && confirm(true)) {
+          // here in if condition event.target.nodeName is the event delegation...
+          let lsitItem = event.target.parentElement;
+          lsitItem.remove();
+          alert("Item Deleted...!");
+        }
+      });
+      // let DeleteButton = document.querySelectorAll(".deletebtn");
+      // for (delitem of DeleteButton) {
+      //   delitem.addEventListener("click", function () {
+      //     alert("deleted");
+      //     let parent = this.parentElement;
+      //     parent.remove();
+      //   items.innerText = "";
+      //   items.remove();
+      //   ul.remove();
+      //   });
+      // }
+    </script>
+  </body>
+</html>
